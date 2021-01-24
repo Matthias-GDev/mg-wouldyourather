@@ -3,6 +3,7 @@ import LOGO from '../images/logo.png'
 import { Component } from 'react'
 import { setAuthedUser } from '../actions/authedUser'
 import { connect } from 'react-redux'
+import { Redirect, withRouter } from 'react-router-dom'
 
 class SignIn extends Component{
 
@@ -10,6 +11,7 @@ class SignIn extends Component{
         super(props)
         this.state = {
             selectedUserId:null,
+            goToDashboard:false,
         }
         this.handleLoginSelectionChanged = this.handleLoginSelectionChanged.bind(this)
         this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
@@ -20,7 +22,7 @@ class SignIn extends Component{
         e.preventDefault()
         const newLogginUserId = this.state.selectedUserId
         this.props.dispatch(setAuthedUser(newLogginUserId))
-        //ToDo: Go to Homescreen
+        this.setState({goToDashboard:true})
     }
 
     handleLoginSelectionChanged(e)
@@ -34,6 +36,12 @@ class SignIn extends Component{
     render(){
 
         const {registeredUsers} = this.props
+        const { goToDashboard } = this.state
+
+        if(goToDashboard)
+        {
+            return <Redirect to={'/dashboard'} />
+        }
 
         return(
             <center>
@@ -48,10 +56,11 @@ class SignIn extends Component{
                         <br />
                         <p style={{'color':'lightblue'}}>Sign In</p>
                         <form onSubmit={this.handleLoginSubmit}>
-                            <select onChange={this.handleLoginSelectionChanged}>
+                            <select className='sign-in-combo' onChange={this.handleLoginSelectionChanged}>
+                                <option key='default' value='0'></option>
                                 {
                                     Object.keys(registeredUsers).map( user =>
-                                        <option className='sign-in-option' style={{'backgroundImage':`url(${registeredUsers[user].avatarURL})`}} key={user} value={registeredUsers[user].id}>
+                                        <option className='sign-in-option' key={user} value={registeredUsers[user].id}>
                                             {registeredUsers[user].name}
                                         </option>
                                     )
@@ -73,4 +82,4 @@ function mapStateToProps ({ users }){
     }
 }
 
-export default connect(mapStateToProps)(SignIn)
+export default withRouter(connect(mapStateToProps)(SignIn))

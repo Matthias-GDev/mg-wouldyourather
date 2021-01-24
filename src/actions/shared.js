@@ -2,10 +2,10 @@ import { getInitialData,getUsers } from '../utils/api'
 
 import { receiveUsers } from '../actions/users'
 import { receiveQuestions } from '../actions/questions'
-import { setAuthedUser } from '../actions/authedUser'
+import { setAuthedUser,logoutAuthedUser } from '../actions/authedUser'
 
 //toDo
-const AUTHED_ID = 'sarahedo'
+//const AUTHED_ID = 'sarahedo'
 
 export function handleInitialData () {
     return (dispatch) => {
@@ -13,7 +13,6 @@ export function handleInitialData () {
             .then(({users,questions}) => {
                 dispatch(receiveUsers(users))
                 dispatch(receiveQuestions(questions))
-                dispatch(setAuthedUser(AUTHED_ID))
             })
     }
 }

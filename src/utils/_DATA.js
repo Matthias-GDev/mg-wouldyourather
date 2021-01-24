@@ -8,7 +8,6 @@ let users = {
     id: 'matthiasgutbrod',
     name: 'Matthias Gutbrod',
     avatarURL: picture_matthias,
-    pictureURL:'images/eichhorn.jpg',
     answers: {
     },
     questions: []
@@ -17,7 +16,6 @@ let users = {
     id: 'sarahedo',
     name: 'Sarah Edo',
     avatarURL: picture_sara,
-    pictureURL:'images/eichhorn.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -30,7 +28,6 @@ let users = {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
     avatarURL: picture_tyler,
-    pictureURL:'images/eichhorn.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -41,7 +38,6 @@ let users = {
     id: 'johndoe',
     name: 'John Doe',
     avatarURL: picture_john,
-    pictureURL:'images/eichhorn.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',

@@ -23,6 +23,10 @@
     font-weight: bold;
 }
 
+.sign-in-combo{
+    min-width: 60%;
+}
+
 .sign-in-logo {
     max-height: 150px;
     max-width: 150px;
@@ -34,9 +38,6 @@
 }
 
 .sign-in-option {
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: top left;
 }
 
 .sign-in-button {
