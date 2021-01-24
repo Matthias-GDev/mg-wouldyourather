@@ -1,0 +1,42 @@
+
+.sign-in-box {
+    max-width: 50%;
+    box-shadow: 10px 10px 15px silver;
+    border-color: lightblue;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
+.sign-in-header {
+    background-color: lightblue;
+    margin: 10px 10px 10px 10px;
+}
+
+.sign-in-title-small {
+    font-size: 0.6em;
+    margin-bottom: 100px;
+}
+
+.sign-in-title{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.sign-in-logo {
+    max-height: 150px;
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+}
+
+.sign-in-body {
+}
+
+.sign-in-button {
+    background-color: green;
+    color: white;
+    min-width: 90%;
+    min-height: 30px;
+    margin: 10px 10px 10px 10px;
+}

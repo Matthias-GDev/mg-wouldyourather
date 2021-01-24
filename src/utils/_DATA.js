@@ -1,4 +1,4 @@
-import picture_sara from '../images/hung.jpg'
+import picture_sara from '../images/hund.jpg'
 import picture_tyler from '../images/igel.jpg'
 import picture_john from '../images/waschbaer.jpg'
 
