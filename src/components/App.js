@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
-import {BrowserRouter as Router,Route} from 'react-router-dom'
-import { Redirect, withRouter } from 'react-router-dom'
+import { BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 
 //Custom Components
-import Nav from './Nav'
+import Navigation from './Navigation'
 import SignIn from './SignIn'
 import Dashboard from './Dashbaord'
 import Logout from './Logout'
+import ProtectedRoute from './ProtectedRoute'
 
 
 class App extends Component {
@@ -18,13 +18,18 @@ class App extends Component {
     }
 
     render(){
+
         return(
             <Router>
-                <Nav />
+                <Navigation />
+                <br />
                 <div>
-                    <Route path='/' exact component={SignIn} />
-                    <Route path='/logout' exact component={Logout} />
-                    <Route path='/dashboard' exact component={Dashboard} />
+                    <Switch>
+                        <Route path='/' exact component={SignIn} />
+                        <Route path='/logout' exact component={Logout} />
+                        <ProtectedRoute path='/dashboard' exact component={Dashboard} />
+                        <Route path='/signin' exact component={SignIn} />
+                    </Switch>
                 </div>
             </Router>
         )

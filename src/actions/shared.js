@@ -1,11 +1,6 @@
 import { getInitialData,getUsers } from '../utils/api'
-
 import { receiveUsers } from '../actions/users'
 import { receiveQuestions } from '../actions/questions'
-import { setAuthedUser,logoutAuthedUser } from '../actions/authedUser'
-
-//toDo
-//const AUTHED_ID = 'sarahedo'
 
 export function handleInitialData () {
     return (dispatch) => {
