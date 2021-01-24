@@ -33,6 +33,12 @@
 .sign-in-body {
 }
 
+.sign-in-option {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
 .sign-in-button {
     background-color: green;
     color: white;
