@@ -9,6 +9,7 @@ import SignIn from './SignIn'
 import Dashboard from './Dashbaord'
 import Logout from './Logout'
 import ProtectedRoute from './ProtectedRoute'
+import NewQuestion from './NewQuestion'
 
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
                         <Route path='/' exact component={SignIn} />
                         <Route path='/logout' exact component={Logout} />
                         <ProtectedRoute path='/dashboard' exact component={Dashboard} />
+                        <ProtectedRoute path='/add' exact component={NewQuestion} />
                         <Route path='/signin' exact component={SignIn} />
                     </Switch>
                 </div>

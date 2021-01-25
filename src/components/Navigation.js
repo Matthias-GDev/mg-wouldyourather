@@ -29,14 +29,14 @@ class Navigation extends Component {
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link>
-                                        <NavLink to='/dashboard' exact activeClassName='active'>
+                                        <NavLink to='/add' exact activeClassName='active'>
                                             New Question
                                         </NavLink>
                                     </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link>
-                                        <NavLink to='/dashboard' exact activeClassName='active'>
+                                        <NavLink to='/leaderboard' exact activeClassName='active'>
                                             Leader Board
                                         </NavLink>
                                     </Nav.Link>
