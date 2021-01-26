@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Redirect, withRouter } from 'react-router-dom'
 
+import Question from './Question'
+
 class Dashboard extends Component {
 
     constructor(props){
@@ -9,9 +11,14 @@ class Dashboard extends Component {
     }
 
     render(){
+        const { questions, authedUser } = this.props
+        const all_Questions = Object.values(questions)
+
         return(
             <div>
-                HOME!
+                    {all_Questions.map((question) => (
+                           <Question />
+                    ))}
             </div>
         )
     }
