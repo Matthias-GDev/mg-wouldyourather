@@ -1,17 +1,14 @@
 import { Component } from 'react'
+import '../css/question.css';
 import { Container,Row,Col,Card,Form,Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { connect } from 'react-redux'
 
 class Question extends Component{
 
     render(){
 
-        const userPicture = this.props.loggedInUser ? this.props.loggedInUser.avatarURL : ''
-        const userName = "Max Mustermann"
-
-        const optionA = "Option A"
-        const optionB = "Option B"
-
+        const { questionItem, author } = this.props;
         return(
             <Container fluid>
                 <br />
@@ -27,16 +24,16 @@ class Question extends Component{
                                 className="mb-4"
                                 border="primary"
                             >
-                                <Card.Header className="text-left"><h3>{userName} asks:</h3></Card.Header>
+                                <Card.Header className="text-left"><h3>{author.name} asks:</h3></Card.Header>
                                 <Card.Body>
                                     <Row>
                                         <Col>  
-                                            <img className='nav-user-picture' src={userPicture} />
+                                            <img className='question-user-picture' src={author.avatarURL} />
                                         </Col>
                                         <Col>
                                             <Card.Title className='text-left'>Would you rather</Card.Title>
                                             <Card.Text className="text-left">
-                                                {optionA} or ...
+                                                {questionItem.optionOne.text} or ...
                                             </Card.Text>
                                             <Form >
                                                 <Button type="submit" variant="primary" size="lg" block>
@@ -54,8 +51,18 @@ class Question extends Component{
             </Container>
         )
     }
-
-
 }
 
-export default Question
+function mapStateToProps({ authedUser, questions, users },{ id }) {
+
+    const questionItem = questions[id]
+    const author = questionItem ? users[questionItem.author] : null
+
+    return {
+        authedUser,
+        questionItem,
+        author
+    }
+}
+
+export default connect(mapStateToProps)(Question)

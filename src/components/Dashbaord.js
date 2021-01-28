@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import '../css/dashboard.css';
 import { connect } from 'react-redux'
 import { Redirect, withRouter } from 'react-router-dom'
 
@@ -16,15 +17,19 @@ class Dashboard extends Component {
 
         return(
             <div>
+                <ul className="dashboard-card-list">
                     {all_Questions.map((question) => (
-                           <Question />
+                        <li key={question.id}>
+                           <Question id={question.id} />
+                        </li>
                     ))}
+                </ul>
             </div>
         )
     }
 }
 
-function mapStateToProps(authedUser,questions) {
+function mapStateToProps({authedUser,questions}) {
     return {
         authedUser,
         questions
