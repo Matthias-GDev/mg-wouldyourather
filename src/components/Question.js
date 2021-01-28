@@ -36,7 +36,7 @@ class Question extends Component{
                                                 {questionItem.optionOne.text} or ...
                                             </Card.Text>
                                             <Form >
-                                                <Button type="submit" variant="primary" size="lg" block>
+                                                <Button variant="primary" size="lg" block>
                                                     View Poll
                                                 </Button>
                                             </Form>

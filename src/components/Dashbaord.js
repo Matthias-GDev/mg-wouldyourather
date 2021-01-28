@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import '../css/dashboard.css';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { Container,Row,Col,Card,Form,Button,Tabs,Tab } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Redirect, withRouter } from 'react-router-dom'
@@ -40,7 +41,9 @@ class Dashboard extends Component {
                                  <ul className="dashboard-card-list">
                                     {unansweredQuestions.map((question) => (
                                         <li key={question.id}>
-                                        <Question id={question.id} />
+                                            <Link to={`question/${question['id']}`}>
+                                                <Question id={question.id} />
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>

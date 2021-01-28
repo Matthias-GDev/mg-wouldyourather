@@ -15,7 +15,7 @@ Would you rather" is a conversation or party game where a dilemma is posed in th
 - Start the App with `yarn start` or `npm start`
 - View the App in your Browser: http://localhost:3000.
 
-## Browsers
+## Browser support
 
 The app was tested in the following browsers:
 
