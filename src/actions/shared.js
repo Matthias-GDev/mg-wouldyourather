@@ -1,6 +1,6 @@
 import { getInitialData,getUsers } from '../utils/api'
 import { receiveUsers,addQuestionToUser,addAnswerToUser } from '../actions/users'
-import { receiveQuestions, addAnswerToQuestion} from '../actions/questions'
+import { receiveQuestions, addAnswerToQuestion,saveQuestion} from '../actions/questions'
 
 export function handleInitialData () {
     return (dispatch) => {
@@ -21,12 +21,18 @@ export function getUsersData(){
     }
 }
 
+export function handleSaveNewQuestion(question,authedUser) {
+    return (dispatch) => {
+        dispatch(saveQuestion(question))
+        dispatch(addQuestionToUser(question.id,authedUser))
+    }
+}
+
 
 export function handleAnswerToQuestion(questionId,userId,answer)
 {
     return (dispatch) => {
         dispatch(addAnswerToQuestion(questionId,userId,answer))
-        dispatch(addQuestionToUser(questionId,userId))
         dispatch(addAnswerToUser(questionId,userId,answer))
     }
 }

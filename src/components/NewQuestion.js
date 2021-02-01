@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux'
 import { Container,Row,Col,Card,Form,Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { saveQuestion } from '../actions/questions'
+import { handleSaveNewQuestion } from '../actions/shared'
 import { formatQuestion } from '../utils/_DATA'
 
 class NewQuestion extends Component{
@@ -31,7 +31,7 @@ class NewQuestion extends Component{
         e.preventDefault()
         const {user_text_option1,user_text_option2} = this.state
         const option = {'optionOneText':user_text_option1,'optionTwoText':user_text_option2,'author':this.props.authedUser.authedUser}
-        this.props.dispatch(saveQuestion(formatQuestion(option)))
+        this.props.dispatch(handleSaveNewQuestion(formatQuestion(option),this.props.authedUser.authedUser))
         
         this.setState({
         	optionOneText:'',
