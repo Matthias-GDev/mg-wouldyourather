@@ -28,7 +28,7 @@ class Question extends Component{
                                 <Card.Body>
                                     <Row>
                                         <Col>  
-                                            <img className='question-user-picture' src={author.avatarURL} />
+                                            <img className='question-user-picture' alt='User' src={author.avatarURL} />
                                         </Col>
                                         <Col>
                                             <Card.Title className='text-left'>Would you rather</Card.Title>

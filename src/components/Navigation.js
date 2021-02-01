@@ -52,7 +52,7 @@ class Navigation extends Component {
                                         <center>
                                             <div>
                                                 {userName}&nbsp;
-                                                <img className='nav-user-picture' src={userPicture} />
+                                                <img className='nav-user-picture' alt='nav' src={userPicture} />
                                                 
                                             </div>
                                         </center>

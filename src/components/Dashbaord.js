@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import '../css/dashboard.css';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Container,Row,Col,Card,Form,Button,Tabs,Tab } from 'react-bootstrap';
+import { Container,Row,Col,Tabs,Tab } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Redirect, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import Question from './Question'
 

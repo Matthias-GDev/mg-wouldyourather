@@ -1,6 +1,6 @@
 import { getInitialData,getUsers } from '../utils/api'
-import { receiveUsers } from '../actions/users'
-import { receiveQuestions, saveQuestion} from '../actions/questions'
+import { receiveUsers,addQuestionToUser,addAnswerToUser } from '../actions/users'
+import { receiveQuestions, addAnswerToQuestion} from '../actions/questions'
 
 export function handleInitialData () {
     return (dispatch) => {
@@ -20,3 +20,15 @@ export function getUsersData(){
             })
     }
 }
+
+
+export function handleAnswerToQuestion(questionId,userId,answer)
+{
+    return (dispatch) => {
+        dispatch(addAnswerToQuestion(questionId,userId,answer))
+        dispatch(addQuestionToUser(questionId,userId))
+        dispatch(addAnswerToUser(questionId,userId,answer))
+    }
+}
+
+
