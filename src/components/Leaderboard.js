@@ -37,9 +37,9 @@ class Leaderboard extends Component{
                                                 <span>Answered questions <br /><b>{Object.keys(user.answers).length}</b></span><br /><hr />
                                                 <span>Created questions <br /><b>{user.questions.length}</b></span>
                                             </Col>
-                                            <Col>
+                                            <Col className='text-center'>
                                                 <span>Points</span><br />
-                                                <span>{user.points}</span>
+                                                <span style={{'color':'green','fontSize':'6rem'}}>{user.points}</span>
                                             </Col>
                                         </Row>
                                     </Card.Body>
