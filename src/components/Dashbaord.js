@@ -52,7 +52,9 @@ class Dashboard extends Component {
                                  <ul className="dashboard-card-list">
                                     {answeredQuestions.map((question) => (
                                         <li key={question.id}>
-                                        <Question id={question.id} />
+                                        <Link to={`question/${question['id']}`}>
+                                            <Question id={question.id} />
+                                        </Link>
                                         </li>
                                     ))}
                                 </ul>

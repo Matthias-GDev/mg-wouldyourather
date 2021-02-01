@@ -42,7 +42,6 @@ class Navigation extends Component {
                                 </Nav.Item>
                                 <Nav.Item>
                                         <center>
-                                            
                                                 {userName!=='' ? (
                                                     <div>
                                                         {userName + ' '}
@@ -51,8 +50,6 @@ class Navigation extends Component {
                                                 ) : (
                                                     <p></p>
                                                 )}
-                                                
-                                            
                                         </center>
                                 </Nav.Item>
                             </Nav>

@@ -12,6 +12,7 @@ import ProtectedRoute from './ProtectedRoute'
 import NewQuestion from './NewQuestion'
 import Leaderboard from './Leaderboard'
 import QuestionDetail from './QuestionDetail'
+import PageNotFound from './PageNotFound'
 
 
 class App extends Component {
@@ -35,6 +36,7 @@ class App extends Component {
                         <ProtectedRoute path='/leaderboard' exact component={Leaderboard} />
                         <ProtectedRoute path='/question/:id' component={QuestionDetail} />
                         <Route path='/signin' exact component={SignIn} />
+                        <Route path='/page-not-found' component={PageNotFound} />
                     </Switch>
                 </div>
             </Router>
