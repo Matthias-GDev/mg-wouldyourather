@@ -20,41 +20,39 @@ class Navigation extends Component {
                         <Col sm={1}></Col>
                         <Col>
                             <Nav className="justify-content-center" activeKey="/home">
-                                <Nav.Item>
-                                    <Nav.Link>
-                                        <NavLink to='/dashboard' exact activeClassName='active'>
+                                <Nav.Item className={{'margin':'10 10 10 10'}}>
+                                        <NavLink style={{marginRight: '20px'}} to='/dashboard' exact activeClassName='active'>
                                             Home
                                         </NavLink>
-                                    </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link>
-                                        <NavLink to='/add' exact activeClassName='active'>
+                                        <NavLink style={{marginRight: '20px'}} to='/add' exact activeClassName='active'>
                                             New Question
                                         </NavLink>
-                                    </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link>
-                                        <NavLink to='/leaderboard' exact activeClassName='active'>
+                                        <NavLink style={{marginRight: '20px'}} to='/leaderboard' exact activeClassName='active'>
                                             Leader Board
                                         </NavLink>
-                                    </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link>
-                                        <NavLink to='/logout' exact activeClassName='active'>
+                                        <NavLink style={{marginRight: '20px'}} to='/logout' exact activeClassName='active'>
                                             Logout
                                         </NavLink>
-                                    </Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                         <center>
-                                            <div>
-                                                {userName}&nbsp;
-                                                <img className='nav-user-picture' alt='nav' src={userPicture} />
+                                            
+                                                {userName!=='' ? (
+                                                    <div>
+                                                        {userName + ' '}
+                                                        <img className='nav-user-picture' alt='nav' src={userPicture} />
+                                                    </div>
+                                                ) : (
+                                                    <p></p>
+                                                )}
                                                 
-                                            </div>
+                                            
                                         </center>
                                 </Nav.Item>
                             </Nav>
