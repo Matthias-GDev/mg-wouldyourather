@@ -1,6 +1,4 @@
-export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
-export const SAVE_QUESTION = 'SAVE_QUESTION'
-export const ADD_ANSWER_TO_QUESTION = 'ADD_ANSWER_TO_QUESTION'
+import { RECEIVE_QUESTIONS,SAVE_QUESTION,ADD_ANSWER_TO_QUESTION } from './types.js'
 
 export function receiveQuestions (questions){
     return {
