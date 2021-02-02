@@ -9,6 +9,10 @@ export function saveQuestionAPI (question) {
   return _saveQuestion(question)
 }
 
+export function saveQuestionAnswerAPI (authedUser, qid, answer) {
+  return _saveQuestionAnswer(authedUser, qid, answer)
+}
+
 export function getUsers () {
   return Promise.all([
     _getUsers(),
