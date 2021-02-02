@@ -31,7 +31,7 @@ class NewQuestion extends Component{
         e.preventDefault()
         const {user_text_option1,user_text_option2} = this.state
         const option = {'optionOneText':user_text_option1,'optionTwoText':user_text_option2,'author':this.props.authedUser.authedUser}
-        this.props.dispatch(handleSaveNewQuestion(formatQuestion(option),this.props.authedUser.authedUser))
+        this.props.dispatch(handleSaveNewQuestion(formatQuestion(option)))
         
         this.setState({
         	optionOneText:'',
