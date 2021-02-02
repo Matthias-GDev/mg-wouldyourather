@@ -36,7 +36,7 @@ class App extends Component {
                         <ProtectedRoute path='/leaderboard' exact component={Leaderboard} />
                         <ProtectedRoute path='/question/:id' component={QuestionDetail} />
                         <Route path='/signin' exact component={SignIn} />
-                        <Route path='/page-not-found' component={PageNotFound} />
+                        <Route component={PageNotFound} />
                     </Switch>
                 </div>
             </Router>

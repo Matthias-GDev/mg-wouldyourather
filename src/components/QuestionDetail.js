@@ -143,10 +143,16 @@ function mapStateToProps({authedUser, users, questions}, { match }) {
     
     const { id } = match.params
     const questionItem = questions[id]
+
+    if(questionItem==null)
+    {
+        return <Redirect to="/page-not-found"/>
+    }
+
     const author = questionItem ? users[questionItem.author] : null
     const questionAnswered = questionItem ? (questionItem.optionOne.votes.indexOf(authedUser) > -1 || questionItem.optionTwo.votes.indexOf(authedUser) > -1) : false
 
-    const actualvotes = questionItem.optionOne.votes.length + questionItem.optionTwo.votes.length
+    const actualvotes = (questionItem.optionOne!==null && questionItem.optionTwo!==null) ? questionItem.optionOne.votes.length + questionItem.optionTwo.votes.length:null
     const actualvotesOptionOne = (questionItem && questionItem.optionOne.votes) ? questionItem.optionOne.votes.length : 0
     const pOptionOne = ((actualvotesOptionOne / actualvotes) * 100).toFixed(1)
     const actualvotesOptionTwo = (questionItem && questionItem.optionTwo.votes) ? questionItem.optionTwo.votes.length : 0

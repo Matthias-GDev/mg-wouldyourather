@@ -77,7 +77,7 @@ class NewQuestion extends Component{
                                         <br /><br />
                                         <Form.Control value={user_text_option2} onChange={(e) => this.handleChangeOption(e,2)} size="lg" type="text" placeholder="Enter Option Two Text Here" />
                                         <br /><br />
-                                        <Button type="submit" variant="primary" size="lg" block>
+                                        <Button disabled={user_text_option1==='' || user_text_option2===''} type="submit" variant="primary" size="lg" block>
                                             Submit
                                         </Button>
                                     </Form>

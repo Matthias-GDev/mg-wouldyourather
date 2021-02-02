@@ -35,12 +35,13 @@ class SignIn extends Component{
 
     render(){
 
-        const {registeredUsers} = this.props
+        const {registeredUsers,location} = this.props
         const { goToDashboard } = this.state
+        const { from } = location.state || { from: { pathname: '/dashboard'}}
 
         if(goToDashboard)
         {
-            return <Redirect to={'/dashboard'} />
+            return <Redirect to={from} />
         }
 
         return(
@@ -67,7 +68,7 @@ class SignIn extends Component{
                                 }
                             </select>
                             <br /><br />
-                            <button className='sign-in-button'>Sign In</button>
+                            <button disabled={!this.state.selectedUserId} className='sign-in-button'>Sign In</button>
                         </form>
                     </div>
                 </div>
